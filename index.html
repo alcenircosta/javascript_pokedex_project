@@ -37,24 +37,15 @@
         <section class="content">
             <h1>Pokedex</h1>
 
-            <ol class="pokemons">
-                <li class="pokemon">
-                    <span class="number">#001</span>
-                    <span class="name">Bulbasaur</span>
-                    <div class="detail">
-                        <ol class="types">
-                            <li class="type">grass</li>
-                            <li class="type">poison</li>
-                        </ol>
-                        <img
-                            src="https://seeklogo.com/images/B/bulbasaur-logo-8A27924C02-seeklogo.com.png"
-                            alt="Bulbasaur"
-                        />
-                    </div>
-                </li>
-            </ol>
+            <ol class="pokemons" id="pokemon_list"></ol>
+
+            <div class="paginate">
+                <button type="button" id="loadMoreButton">Load More</button>
+            </div>
         </section>
 
+        <script src="assets/js/pokemon-model.js"></script>
+        <script src="assets/js/poke-api.js"></script>
         <script src="assets/js/scripts.js"></script>
     </body>
 </html>
