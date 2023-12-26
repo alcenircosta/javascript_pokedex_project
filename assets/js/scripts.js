@@ -1,7 +1,7 @@
 const loadMoreButton = document.getElementById("loadMoreButton");
-const loadLessButton = document.getElementById("loadLessButton");
 const limit = 5;
 let offset = 0;
+const maxRecords = 151;
 
 loadPokemonItens(offset, limit);
 
@@ -38,5 +38,14 @@ function limpaListaDePokemons() {
 
 loadMoreButton.addEventListener("click", () => {
     offset += limit;
+    const qtdRecordsNextPage = offset + limit;
+
+    if (qtdRecordsNextPage >= maxRecords) {
+        const newLimit = maxRecords - offset;
+        loadPokemonItens(offset, newLimit);
+        loadMoreButton.parentNode.removeChild(loadMoreButton);
+        return;
+    }
+
     loadPokemonItens(offset, limit);
 });
